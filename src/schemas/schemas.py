@@ -1,14 +1,12 @@
 from pydantic import BaseModel
 
 
-class Link(BaseModel):
+class LinkModel(BaseModel):
     scheme: str
     netloc: str
     path: str | None = ''
     params: str | None = ''
     query: str | None = ''
     fragment: str | None = ''
+    short_code: str | None = None
 
-
-class AddReturnString(Link):
-    return_string: str

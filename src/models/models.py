@@ -1,12 +1,11 @@
-from mongoengine import Document, StringField
+from beanie import Document
 
 
 class Link(Document):
-    scheme = StringField(required=True)
-    netloc = StringField(required=True)
-    path = StringField()
-    params = StringField()
-    query = StringField()
-    fragment = StringField()
-
-
+    scheme: str
+    netloc: str
+    path: str
+    params: str
+    query: str
+    fragment: str
+    short_code: str | None = None

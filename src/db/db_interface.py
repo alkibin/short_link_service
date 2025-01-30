@@ -3,9 +3,9 @@ from abc import ABC, abstractmethod
 
 class AbstractDb(ABC):
     @abstractmethod
-    async def save_data(self, data):
+    async def new_record(self, record):
         ...
 
     @abstractmethod
-    async def get_data(self, property):
+    async def find_record(self, record):
         ...

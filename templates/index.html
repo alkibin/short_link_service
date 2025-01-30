@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Link Service</title>
+</head>
+<body>
+    <h1>Short Link Service</h1>
+
+    <form action="/app/add" method="post">
+        <label for="link">Enter your link:</label>
+        <input type="text" id="link" name="link" required>
+        <button type="submit">Get Short Link</button>
+    </form>
+
+    {% if short_link %}
+    <p>Your short link: <a href="{{ short_link }}">{{ short_link }}</a></p>
+    {% endif %}
+
+    <ul>
+        <li><a href="/app/add">Add a new link</a></li>
+        <li><a href="/app/get">Get original link by short link</a></li>
+    </ul>
+</body>
+</html>
